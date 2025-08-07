@@ -1,0 +1,73 @@
+steps:
+  # Reservations
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/reservations/production',
+        '-f',
+        'apps/reservations/Dockerfile',
+        '.',
+      ]
+   - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/reservations/production'
+      ]
+  # Payments
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/payments/production',
+        '-f',
+        'apps/payments/Dockerfile',
+        '.',
+      ]
+   - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/payments/production'
+      ]
+  # Notifications
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/notifications/production',
+        '-f',
+        'apps/notifications/Dockerfile',
+        '.',
+      ]
+   - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/notifications/production'
+      ]
+  # Auth
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/auth/production',
+        '-f',
+        'apps/auth/Dockerfile',
+        '.',
+      ]
+   - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/auth/production'
+      ]
