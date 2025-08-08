@@ -53,7 +53,7 @@ steps:
         '-t',
         'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/notifications/production'
       ]
-  # Auth
+  # auth
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
