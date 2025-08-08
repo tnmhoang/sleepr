@@ -10,31 +10,31 @@ steps:
         'apps/reservations/Dockerfile',
         '.',
       ]
-   - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'push',
-        '-t',
-        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/reservations/production'
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/reservations/production',
       ]
-  # Payments
+
+  # Auth
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'build',
         '-t',
-        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/payments/production',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/auth/production',
         '-f',
-        'apps/payments/Dockerfile',
+        'apps/auth/Dockerfile',
         '.',
       ]
-   - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'push',
-        '-t',
-        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/payments/production'
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/auth/production',
       ]
+
   # Notifications
   - name: 'gcr.io/cloud-builders/docker'
     args:
@@ -46,28 +46,27 @@ steps:
         'apps/notifications/Dockerfile',
         '.',
       ]
-   - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'push',
-        '-t',
-        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/notifications/production'
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/notifications/production',
       ]
-  # auth
+
+  # Payments
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'build',
         '-t',
-        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/auth/production',
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/payments/production',
         '-f',
-        'apps/auth/Dockerfile',
+        'apps/payments/Dockerfile',
         '.',
       ]
-   - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'push',
-        '-t',
-        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/auth/production'
+        'asia-southeast1-docker.pkg.dev/elated-fabric-468308-k5/payments/production',
       ]
